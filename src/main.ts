@@ -4,6 +4,7 @@ import { MessagesModule } from './messages/messages.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(MessagesModule);
+  //global valdation pipe
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT ?? 3000);
 }
